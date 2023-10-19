@@ -1,6 +1,6 @@
 namespace TestProject
 {
-    public class Tests
+    public class MathSolverTests
     {
         [SetUp]
         public void Setup()
