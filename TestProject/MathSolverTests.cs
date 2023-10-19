@@ -1,3 +1,5 @@
+using LibrarySample;
+
 namespace TestProject
 {
     public class MathSolverTests
@@ -8,9 +10,21 @@ namespace TestProject
         }
 
         [Test]
-        public void Test1()
+        [TestCase("3+3",6)]
+        [TestCase("3,3+3,3",6.6)]
+        [TestCase("3-3",0)]
+        [TestCase("3*3",9)]
+        [TestCase("3/3",1)]
+        public void Test(string expression, decimal result)
         {
-            Assert.Pass();
+            if (MathSolver.Evaluate(expression) == result)
+            {
+                Assert.Pass();
+            }
+            else
+            {
+                Assert.Fail();
+            }
         }
     }
 }
